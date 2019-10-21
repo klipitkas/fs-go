@@ -14,3 +14,5 @@ WORKDIR /data
 COPY --from=base /app/fs-go /app/fs-go
 
 ENTRYPOINT ["/app/fs-go"]
+
+EXPOSE 8080
