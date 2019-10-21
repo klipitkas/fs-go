@@ -43,3 +43,20 @@ $ fs-go
 ```
 
 From anywhere in your system.
+
+### BUILD AND RUN WITH DOCKER
+
+Build image
+```
+docker build -t fs:local .
+```
+
+Run it
+```
+docker run --rm -v $(pwd):/data -p 8080:8080 fs:local
+```
+
+Run in different port
+```
+docker run --rm -v $(pwd):/data -p 9000:9000 fs:local -addr :9000
+```
