@@ -19,13 +19,13 @@ $ go build
 Starting the server is easy:
 
 ```
-$ ./fs-go -port 8080 -dir .
+$ ./fs-go -addr 8080 -dir .
 ```
 
 Only two parameters are needed:
 
 - **dir**: The directory that will be served. (**default**: `.`)
-- **port**: The port that the server will listen to. (**default**: `8080`)
+- **addr**: The address that the server will listen to. (**default**: `:8080`)
 
 ### INSTALL GLOBALLY
 
