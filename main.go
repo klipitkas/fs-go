@@ -25,7 +25,7 @@ func main() {
 	log.Printf("FS - Port: %v | Dir: %v", port, dir)
 
 	// Start the file server.
-	if err := http.ListenAndServe(":"+fmt.Sprintf("%d", port), fs); err != nil {
+	if err := http.ListenAndServe(fmt.Sprintf(":%d", port), fs); err != nil {
 		log.Fatalf("server listen on port %v: %v", port, err)
 	}
 
