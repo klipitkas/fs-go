@@ -7,11 +7,13 @@ import (
 	"net/http"
 )
 
+// The port that the fileserver will listen to.
 var port int
+
+// The root directory that will be served.
 var dir string
 
 func main() {
-
 	// Handle the flags that are provided.
 	flag.IntVar(&port, "port", 8080, "The port that the server will listen to.")
 	flag.StringVar(&dir, "dir", ".", "The root directory that will be served.")
@@ -22,11 +24,10 @@ func main() {
 	fs := http.FileServer(http.Dir(dir))
 
 	// Print details to the console.
-	log.Printf("FS - Port: %v | Dir: %v", port, dir)
+	log.Printf("FS - Port: %d | Dir: %s", port, dir)
 
 	// Start the file server.
 	if err := http.ListenAndServe(fmt.Sprintf(":%d", port), fs); err != nil {
 		log.Fatalf("server listen on port %v: %v", port, err)
 	}
-
 }

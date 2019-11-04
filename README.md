@@ -10,16 +10,16 @@ FS Go is a tiny CLI tool in order to spawn a local file server.
 
 In order to build the executable run the following command:
 
-```
-$ go build
+```bash
+go build
 ```
 
 ### START THE SERVER
 
 Starting the server is easy:
 
-```
-$ ./fs-go -port 8080 -dir .
+```bash
+./fs-go -port 8080 -dir .
 ```
 
 Only two parameters are needed:
@@ -32,14 +32,14 @@ Only two parameters are needed:
 If you only want to use this CLI tool as a binary then you can do that
 easily:
 
-```
-$ go install
+```bash
+go install
 ```
 
 Now you can use:
 
-```
-$ fs-go
+```bash
+fs-go
 ```
 
 From anywhere in your system.
