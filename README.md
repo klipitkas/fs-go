@@ -19,13 +19,13 @@ go build
 Starting the server is easy:
 
 ```bash
-./fs-go -port 8080 -dir .
+./fs-go -addr 8080 -dir .
 ```
 
 Only two parameters are needed:
 
 - **dir**: The directory that will be served. (**default**: `.`)
-- **port**: The port that the server will listen to. (**default**: `8080`)
+- **addr**: The address that the server will listen to. (**default**: `:8080`)
 
 ### INSTALL GLOBALLY
 
@@ -43,3 +43,21 @@ fs-go
 ```
 
 From anywhere in your system.
+
+### BUILD AND RUN WITH DOCKER
+
+To build the Docker image:
+
+```bash
+docker build -t fs:local .
+```
+
+Run the server using Docker:
+```
+docker run --rm -v $(pwd):/data -p 8080:8080 -d fs:local
+```
+
+To run the server using Docker in a different port:
+```
+docker run --rm -v $(pwd):/data -p 9000:9000 fs:local -addr :9000
+```
